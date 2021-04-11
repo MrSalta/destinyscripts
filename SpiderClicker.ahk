@@ -36,3 +36,42 @@ Sleep 500
 var--
 Gui, MyGui:Destroy
 }
+Break
+Return
+
+^+v::
+MsgBox, 4, On a vendor's Screen?, Are you on a vendor's screen?
+MsgBox, 1, Warning!, This is designed for 2560x1440 resolution. Continue?
+var := 0
+MaterialTile := "1785, 325"
+EngramTile := "2375, 150"
+Loop,
+{
+    Gui, VendorGui:New, +AlwaysOnTop
+    Gui, VendorGui:Add, Text,, Redeeming vendor rewards. CTRL-SHIFT-R to stop. Ranks redeemed so far: %var%
+    Gui, VendorGui:Show
+    WinActivate, Destiny 2
+    Sleep 200
+    MouseMove, 1785, 325
+    Sleep 500
+    Click, Down
+    Sleep 500
+    Click, Up
+    Sleep 500
+    MouseMove, 2375, 150
+    Sleep 500
+    Click, Down
+    Sleep 500
+    Click, Up
+    Sleep 1000
+    MouseMove, 950, 400
+    Sleep 200
+    var++
+    Gui, VendorGui:Destroy
+}
+Break
+Return
+
++^R::
+Reload
+Return
