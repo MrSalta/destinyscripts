@@ -36,7 +36,6 @@ Sleep 500
 var--
 Gui, MyGui:Destroy
 }
-Break
 Return
 
 ^+v::
@@ -69,7 +68,6 @@ Loop,
     var++
     Gui, VendorGui:Destroy
 }
-Break
 Return
 
 +^R::
